@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Refillist</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
+<div class="navbar navbar-top" style="margin-top: -60px">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="logo_tagline">
+          <a href="/" class="brand">
+            <img class="header-item" src="/logo.png">
+            <div class="header-item tagline">Changing the world, one job at a time</div>
+          </a>
+        </div>
+        <ul class="nav pull-right">
+          <!--
+          <li><a href="#">Explore</a></li>
+          <li class="divider-vertical"></li>
+          -->
+          <li><a href="/help/faq">FAQ</a></li>
+          <!--
+          <li class="divider-vertical"></li>
+          <li><a href="jobs">Jobs</a></li>
+          <li class="divider-vertical"></li>
+          <li><a href="organizations">Organizations</a></li>
+          -->
+          <li class="divider-vertical"></li>
+          <li>
+            <% if user_signed_in? %>
+                <a><%= current_user.name %></a>
+            <% else %>
+                <a href="/users/auth/facebook"><img alt="Facebook-button" src="/assets/facebook-button.
+png" /></a>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-colors"></div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
+
+</body>
+</html>
