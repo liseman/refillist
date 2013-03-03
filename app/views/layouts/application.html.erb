@@ -24,7 +24,7 @@
 <!--			  	<li class="header-item tagline">Never Run Out!</li>
 -->
           <% if user_signed_in? %>
-      			<li><button href="#" id="add-shelf"><i class="icon-plus"></i> Add Shelf</button></li>
+      			<li><a href="#" id="add-shelf"><i class="icon-plus"></i> Add Shelf</a></li>
     	   </ul>
           <% end %>
         </div>
@@ -67,7 +67,7 @@
 </body>
 <script>
 $(document).ready(function() {
-  $('#add-shelf').onClick(function() {
+  $('#add-shelf').click(function() {
     $('.app-columns').append('<div class="shelf"><h2>New Shelf</h2></div>');
 });
 });
