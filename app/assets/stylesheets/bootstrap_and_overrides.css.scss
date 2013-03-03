@@ -204,3 +204,11 @@ button.btn{
 	margin: 50.8px 0 0 -188px;
 	width: 164px;
 }
+
+.close-parent {
+	margin: 0;
+z-index: 100;
+position: absolute;
+right: 5px;
+top: 5px;
+}
