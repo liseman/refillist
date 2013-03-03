@@ -2,8 +2,6 @@
 body { padding-top: 10px; }
 @import "bootstrap-responsive";
 
-/*everything to do with the shelf*/
-
 .shelf {
 -webkit-transition: box-shadow 0.25s ease-in-out;
 -webkit-transition-delay: 0;
@@ -28,4 +26,14 @@ width: 310px;
 height: 100%;
 margin: 0 10px 0 0;
 background-color: #f9f9f9;
+}
+
+.logged-out-logo {
+
+}
+
+.login-arrow {
+position:absolute;
+right:50px;
+top:50px;
 }
