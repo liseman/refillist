@@ -92,7 +92,7 @@ padding: 8px 10px;
 }
 
 .item-description {
-
+	padding-left: 1%;
 }
 
 .item-image {
@@ -113,6 +113,13 @@ padding: 8px 10px;
 	border-left: 1px solid #093356;
 	border-right: 1px solid #1369b2;
 
+}
+div.item-image.pull-left{
+	margin-right: 2%;
+	margin-left: 2%
+}
+button.btn{
+	margin-left: 2%;
 }
 /*#fill{
 	background: #07253f;
