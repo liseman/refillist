@@ -194,9 +194,10 @@ button.btn{
 	margin: -2%;
 }
 #mainLanding{
+	position: relative;
 	background: url('/billie_holiday.png');
 	width: calc(100% -100px);
-	vertical-align: center;
+	vertical-align: center; 
 }
 
 #slide-image{
