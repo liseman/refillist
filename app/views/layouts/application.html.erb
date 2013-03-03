@@ -112,7 +112,7 @@
         $.ajax({
         url: "/item",
         type: "post",
-        data: { name: $("#item-name").val(), description: $("#item-description").val(), },
+        data: { name: $("#item-name").val(), description: $("#item-description").val() },
         success: function(value) {
           console.log(value.id);
           console.log(value.name);
