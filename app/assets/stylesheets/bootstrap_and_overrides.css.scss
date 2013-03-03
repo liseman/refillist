@@ -61,7 +61,7 @@ overflow-x: auto;
 box-sizing: border-box;
 height: 100%;
 overflow: visible;
-white-space: nowrap;
+<!-- white-space: nowrap; -->
 padding: 10px 0 10px 10px;
 }
 
@@ -72,11 +72,21 @@ box-sizing: border-box;
 position: relative;
 height: 40px;
 padding: 0 10px;
-color: #f9f9f9;
+font-size: 20px;
+font-weight: bold;
 line-height: 40px;
 }
 
 .item-box {
 position: relative;
 padding: 8px 10px;
+}
+
+.item-title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.item-description {
+
 }
