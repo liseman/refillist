@@ -108,8 +108,10 @@
 
   </script>
   <script>
-  $('#new-add-item').click(function(){
+  $(document).ready(function() {
+    $('#new-add-item').click(function(){
     $(this).parent().prepend('test');
+  });
   });
 
 </script>
