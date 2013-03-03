@@ -92,7 +92,8 @@
       success: function(value) {
         console.log(value.id);
         console.log(value.name);
-        $('.app-columns').append('<div class="shelf" id="value.id"><h2>value.name</h2></div>');
+        $('.app-columns').append('<div class="shelf new-shelf"></div>');
+        $('#new-shelf').attr('id', value.id);
       },
     });
     
