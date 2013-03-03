@@ -1,6 +1,6 @@
 @import "bootstrap";
 body { padding-top: 10px; 
-		background: #e7e4e2;
+		background: url('/billi_holiday.png');
 		font-family: helvetica neue, helevetica, sans-serif;
 }
 @import "bootstrap-responsive";
@@ -179,7 +179,6 @@ button.btn{
 	margin-top: 5%;
 }
 #hero-head{
-	font-family: 'hooverville', helevetica, sans-serif;
 	color: #7b2e00;
 }
 /*#fill{
