@@ -109,12 +109,15 @@ padding: 8px 10px;
 	background: #07253f;
 
 }
-li.divider-vertical{
+.navbar .divider-vertical{
 	background: #0c406d;
 }
-#border{
-	border: solid #07253f 20px;
-	border-top: none;
+#fill{
+	background: #07253f;
+}
+#mainLanding{
+	width: [calc 100% - 100px];
+	vertical-align: center;
 }
 /* ----------------------------------- landing --------------------- */
 
