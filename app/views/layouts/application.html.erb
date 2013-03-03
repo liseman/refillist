@@ -101,7 +101,7 @@ $(document).ready(function(){
           $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn" id="item-submit">Submit</button></form></div>');
           $('#item-submit').click(function(e) {
             e.preventDefault();
-            console.log($(this).parent().parent().parent().parent());
+            console.log($(this).parent().parent().parent().parent().id);
             $.ajax({
             url: "/item",
             type: "post",
