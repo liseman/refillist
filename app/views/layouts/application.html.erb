@@ -33,7 +33,7 @@
           <li><a href="#">Explore</a></li>
           <li class="divider-vertical"></li>
           -->
-          <li><a href="#">help</a></li>
+          <li class="link-top-margin"><a href="#">help</a></li>
           <!--
           <li class="divider-vertical"></li>
           <li><a href="jobs">Jobs</a></li>
@@ -43,11 +43,11 @@
 
           <li class="divider-vertical"></li>
           <% if user_signed_in? %>
-            <li>
+            <li class="link-top-margin">
                 <a><%= current_user.name %></a>
             </li>
             <li class="divider-vertical"></li>
-		    <li>
+		    <li class="link-top-margin">
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
             </li>
           <% else %>
