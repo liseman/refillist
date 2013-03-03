@@ -82,6 +82,7 @@
   </div>
 </div>
 </body>
+<!-- add a shelf script -->
 <script>
   $('#modal-form-submit').on('click', function(e) {
     e.preventDefault();
@@ -92,7 +93,30 @@
       success: function(value) {
         console.log(value.id);
         console.log(value.name);
-        $('.app-columns').append('<div class="shelf pull-left" id=' + value.id + '><h2>' + value.name + '</h2></div>');
+        $('.app-columns').append('<div class="shelf pull-left" id=' + value.id + '><div class="shelf-header">' + value.name + '</div><button class="btn" href="#item-modal" data-toggle="modal" id="add-item" style="margin-left: 10px">Add an Item</button></div>');
+      },
+    });
+    $('#shelf-modal').modal('hide');    
+  });
+</script>
+
+<!-- add an item script -->
+<script>
+  $('#modal-form-submit').on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/item",
+      type: "post",
+      data: { name: $("#item-name").val() },
+      success: function(value) {
+        console.log(value.id);
+        console.log(value.name);
+        $('#the id of the specific shelf').prepend('<div class="item-box" id="' + value.id + '">
+        <div class="item-image pull-left"><img src="http://placehold.it/100x100"></div>
+        <div class="item-title">' + value.name + '</div>
+        <div class="item-description clearfix">Gotta put something in here too</div>
+        <div>This item has <span class="remaining">35</span>% remaining</div>
+      </div>
       },
     });
     $('#shelf-modal').modal('hide');    
