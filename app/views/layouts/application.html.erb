@@ -106,7 +106,19 @@
 
   $(document).ready(function() {
     $('.add-item').click(function(){
-      $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn">Submit</button></form></div>');
+      $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn" id="item-submit">Submit</button></form></div>');
+      $('#item-submit').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+        url: "/item",
+        type: "post",
+        data: { name: $("#item-name").val(), description: $("#item-description").val(), },
+        success: function(value) {
+          console.log(value.id);
+          console.log(value.name);
+          console.log(value.description);
+        }
+      })
     });
   });
 
