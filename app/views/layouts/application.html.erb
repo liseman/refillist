@@ -73,7 +73,22 @@ $(document).ready(function() {
 });
  $(document).ready(function() {
      // if shelf has no id:
-     $('.edit').editable( "/shelf" );
+     $('.edit-shelf-title').editable( "/shelf", {
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...'
+     });
+    $('.edit-item-title').editable( "/item_description", {
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...'
+     });
+     $('.edit-item-description').editable('/item_description', { 
+         type      : 'textarea',
+         cancel    : 'Cancel',
+         submit    : 'OK',
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...'
+     });
+ });
      // if shelf as id
      //$('.edit').editable( "/shelf/" + id );
  });
