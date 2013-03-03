@@ -1,10 +1,16 @@
-class ItemsController < ApplicationController
+class ItemController < ApplicationController
+  def index
+    sid = params[:sid]
+    render json: current_user.shelf(sid).items.all
+  end
+
   def create
+    puts params
     name = params[:value]
-    current_user
+    # posthack: security -> current_user must own shelf
     #item = Item.new( :name => name, :_id => current_user.id )
-    item.save!
-    render json: item
+    #item.save!
+    render json: params
   end
 
   def update

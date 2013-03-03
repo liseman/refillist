@@ -7,6 +7,9 @@ Refillist::Application.routes.draw do
   resources :shelf, :only => [:index, :create]
   match 'shelf/:id' => "shelf#update", :via => :post
 
+  resources :item, :only => [:create]
+  match 'item/:sid' => "item#index", :via => :get
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
