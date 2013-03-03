@@ -73,15 +73,17 @@ $(document).ready(function() {
 });
  $(document).ready(function() {
      // if shelf has no id:
-     $('.edit-shelf-title').editable( "/shelf", {
+     $('.edit_shelf').editable( "/shelf", {
          indicator : 'Saving...',
          tooltip   : 'Click to edit...'
      });
-    $('.edit-item-title').editable( "/item_description", {
+
+     $('.edit_item_title').editable( "/item_title", {
          indicator : 'Saving...',
          tooltip   : 'Click to edit...'
      });
-     $('.edit-item-description').editable('/item_description', { 
+
+     $('.edit_item_description').editable('/item_description', { 
          type      : 'textarea',
          cancel    : 'Cancel',
          submit    : 'OK',
