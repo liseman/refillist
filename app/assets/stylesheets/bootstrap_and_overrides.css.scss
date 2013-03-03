@@ -101,7 +101,6 @@ padding: 8px 10px;
 .navbar .nav li > a{
 	color: #e5d8b5;
 	text-shadow:  0 1px 0 #999;
-	margin-top: 9%;
 }
 .navbar .nav li > a:hover{
 	color: #cd6837;
@@ -110,7 +109,7 @@ padding: 8px 10px;
 	background: #07253f;
 
 }
-.navbar .divider-vertical{
+.navbar li.divider-vertical{
 	background: #0c406d;
 }
 /*#fill{
