@@ -72,7 +72,10 @@ $(document).ready(function() {
 });
 });
  $(document).ready(function() {
-     $('.edit').editable('http://www.example.com/save.php');
+     // if shelf has no id:
+     $('.edit').editable( "/shelf" );
+     // if shelf as id
+     //$('.edit').editable( "/shelf/" + id );
  });
 </script>
 <script type="text/javascript" src="/jquery.jeditable.min.js"></script>
