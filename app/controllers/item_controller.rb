@@ -5,12 +5,13 @@ class ItemController < ApplicationController
   end
 
   def create
-    puts params
-    name = params[:value]
     # posthack: security -> current_user must own shelf
-    #item = Item.new( :name => name, :_id => current_user.id )
-    #item.save!
-    render json: params
+    item = Item.new( :name => params[:name],
+                     :shelf_id => params[:shelfid],
+                     :description => params[:description],
+                   )
+    item.save!
+    render json: item
   end
 
   def update
