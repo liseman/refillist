@@ -109,10 +109,8 @@ $(document).ready(function(){
                 console.log(value.id);
                 console.log(value.name);
                 console.log(value.description);
-                $('#add-item').click(function() {
                   $('.shelf-body').prepend('<div class="item-box" id="' + value.id + '"><div class="item-image pull-left"><img src="http://placehold.it/100x100"></div><div class="item-title">' + value.name '</div><div class="item-description clearfix">' + value.description + '</div><div>This item has <span class="remaining">100</span>% remaining</div></div>');
                   $('.temp').remove();
-                });
               },
             });
           });
