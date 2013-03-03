@@ -1,4 +1,8 @@
 class ShelfController < ApplicationController
+  def index
+    render json: current_user.shelf.all
+  end
+
   def create
     name = params[:value]
     shelf = Shelf.new( :name => name, :user_id => current_user.id )
