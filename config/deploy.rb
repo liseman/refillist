@@ -6,7 +6,7 @@ set :repository,      "https://github.com/liseman/refillist.git"
 set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
-set :rails_env,       "production"
+set :rails_env,       "development"
 set :deploy_to,       "/home/refillist/apps/refillist"
 set :normalize_asset_timestamps, false
 
@@ -26,7 +26,7 @@ set(:current_revision)  { capture("cd #{current_path}; git rev-parse --short HEA
 set(:latest_revision)   { capture("cd #{current_path}; git rev-parse --short HEAD").strip }
 set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEAD@{1}").strip }
 
-default_environment["RAILS_ENV"] = 'production'
+default_environment["RAILS_ENV"] = 'development'
 
 # Use our ruby-1.9.2-p290@refillist gemset
 default_environment["PATH"]         = "/usr/local/rvm/gems/ruby-1.9.3-p194@refillist/bin:/usr/local/rvm/gems/ruby-1.9.3-p194@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p194/bin:/usr/local/rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
