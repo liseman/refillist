@@ -95,11 +95,13 @@
       success: function(value) {
         console.log(value.id);
         console.log(value.name);
-        $('.app-columns').append('<div class="shelf pull-left" id=' + value.id + '><div class="shelf-header">' + value.name + '</div><div class="shelf-body"><button class="btn" id="add-item" style="margin-left: 10px">Add an Item</button></div></div>');
+        $('.app-columns').append('<div class="shelf pull-left" id=' + value.id + '><div class="shelf-header">' + value.name + '</div><div class="shelf-body"><button class="btn add-item" style="margin-left: 10px">Add an Item</button></div></div>');
       },
     });
     $('#shelf-modal').modal('hide');    
-    initShelf();
+        $('.add-item').click(function(){
+      $(this).parent().prepend('test');
+    });
   });
 
   $(document).ready(function() {
