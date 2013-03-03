@@ -101,7 +101,7 @@ $(document).ready(function(){
           $(this).parent().remove();
         });
         $('[id^=add-item-]').click(function(){
-          $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description" id="item-description"><input type="text" placeholder="Paste in image url" id="image-url"><br><button type="Create Item" class="btn btn-primary" id="item-submit">Submit</button><button class="btn close-form">Close</button></form></div>');
+          $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description" id="item-description"><input type="text" placeholder="Enter RFID code" id="rfid"><input type="text" placeholder="Paste in image url" id="image-url"><br><button type="Create Item" class="btn btn-primary" id="item-submit">Submit</button><button class="btn close-form">Close</button></form></div>');
           $('.close-form').click(function (){
             $('.temp').remove();
           })
@@ -110,13 +110,14 @@ $(document).ready(function(){
             $.ajax({
             url: "/item",
             type: "post",
-            data: { name: $("#item-name").val(), description: $("#item-description").val(), shelfid: $(this).parents(".shelf").attr("id"), imageurl: $("#image-url").val() },
+            data: { name: $("#item-name").val(), description: $("#item-description").val(), shelfid: $(this).parents(".shelf").attr("id"), rfid: $("#rfid").val(), pic: $("#image-url").val() },
               success: function(value) {
                 console.log(value.id);
                 console.log(value.name);
                 console.log(value.description);
-                console.log(value.imageurl);
-                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="'+value.image+'" style="width:100px"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div>This item has <span class="remaining">100</span>% remaining</div></div>');
+                console.log(value.pic);
+                console.log(value.rfid);
+                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="' + value.pic + '" style="width:100px"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div class="item-rfid">' + value.rfid + '<div>This item has <span class="remaining">100</span>% remaining</div></div>');
                   $('.temp').remove();
                   $('.close-parent').click(function(){
                     $(this).parent().remove();
