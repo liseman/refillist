@@ -4,7 +4,7 @@ class ShelfController < ApplicationController
   end
 
   def create
-    name = params[:value]
+    name = params[:name]
     shelf = Shelf.new( :name => name, :user_id => current_user.id )
     shelf.save!
     render json: shelf
@@ -16,5 +16,6 @@ class ShelfController < ApplicationController
     shelf = Shelf.find_by_id(id)
     shelf.name = params[:value]
     shelf.save!
+    render json: shelf
   end
 end

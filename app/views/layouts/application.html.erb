@@ -72,22 +72,29 @@
     <h3 id="shelf-modalLabel">Add a Shelf</h3>
   </div>
   <div class="modal-body">
-    <form>
+    <form id="modal-form">
       <input id="shelf-name" type="text" placeholder="Enter the name for your shelf">
     </form>
-      <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-    <a href="#" class="btn btn-primary">Create Shelf</a>
-  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <a href="#" id="modal-form-submit" class="btn btn-primary">Create Shelf</a>
+    </div>
   </div>
 </div>
 </body>
-<!-- <script>
-$(document).ready(function() {
-  $('#add-shelf').click(function() {
-    $('.app-columns').append('<div class="shelf"><h2>New Shelf</h2></div>');
-});
-});
-
-</script> -->
+<script>
+  $('#modal-form-submit').on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/shelf",
+      type: "post",
+      data: { name: $("#shelf-name").val() },
+      success: function(value) {
+        console.log(value.id);
+        console.log(value.name);
+      },
+    });
+    
+  });
+</script>
 </html>
