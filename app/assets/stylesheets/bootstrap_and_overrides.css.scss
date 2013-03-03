@@ -109,7 +109,13 @@ padding: 8px 10px;
 	background: #07253f;
 
 }
-
+li.divider-vertical{
+	background: #0c406d;
+}
+.container{
+	border: solid #07253f 20px;
+	border-top: none;
+}
 /* ----------------------------------- landing --------------------- */
 
 #drugs{
