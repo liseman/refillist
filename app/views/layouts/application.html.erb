@@ -22,9 +22,11 @@
           </a>
 		  <ul class="nav">
 <!--			  	<li class="header-item tagline">Never Run Out!</li>
--->      			<li><a href="#"><i class="icon-plus"></i> Add Shelf</a></li>
+-->
+          <% if user_signed_in? %>
+      			<li><a href="#" id="add-shelf"><i class="icon-plus"></i> Add Shelf</a></li>
     	   </ul>
-
+          <% end %>
         </div>
         <ul class="nav pull-right">
           <!--
@@ -62,6 +64,11 @@
     <%= yield %>
   </div>
 </div>
+$(document).ready(function() {
+  $('#add-shelf')onClick(fuction(){
+    $('.app-columns').append('<div class="shelf"><h2>New Shelf</h2></div>');
+});
+});
 
 </body>
 </html>
