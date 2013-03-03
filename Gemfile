@@ -43,3 +43,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'bootstrap-sass'
+
+gem "paperclip", "~> 3.0"
+
+

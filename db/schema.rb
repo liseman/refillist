@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303035521) do
+ActiveRecord::Schema.define(:version => 20130303183100) do
 
   create_table "items", :force => true do |t|
     t.integer  "shelf_id"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(:version => 20130303035521) do
     t.string   "description"
     t.string   "tag"
     t.integer  "amount"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "item_image_file_name"
+    t.string   "item_image_content_type"
+    t.integer  "item_image_file_size"
+    t.datetime "item_image_updated_at"
   end
 
   create_table "shelves", :force => true do |t|
