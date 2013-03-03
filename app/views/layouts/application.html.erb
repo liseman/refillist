@@ -84,6 +84,12 @@
 </body>
 <!-- add a shelf script -->
 <script>
+var initShelf = function(){ 
+  $('#new-add-item').click(function(){
+      $(this).parent().prepend('test');
+    });
+};
+
   $('#modal-form-submit').on('click', function(e) {
     e.preventDefault();
     $.ajax({
@@ -97,20 +103,14 @@
       },
     });
     $('#shelf-modal').modal('hide');    
+    initShelf();
   });
-</script>
 
-<!-- add an item script -->
-<script type="text/javascript">
   $(document).ready(function() {
     $('#add-item').click(function(){
       $(this).parent().prepend('test');
     });
-
-
-    $('#new-add-item').click(function(){
-      $(this).parent().prepend('test');
-    });
+    initShelf();
   });
 
 </script>
