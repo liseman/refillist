@@ -106,7 +106,7 @@
 
   $(document).ready(function() {
     $('.add-item').click(function(){
-      $(this).parent().prepend('<div class="item-box">test</div>');
+      $(this).parent().prepend('<div class="item-box"><form><input type="text" placeholder="Enter Item Name"><input type="text" placeholder="Enter Item Description"><button type="submit" class="btn">Submit</button></form></div>');
     });
   });
 
