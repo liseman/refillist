@@ -22,11 +22,11 @@ pid "/tmp/unicorn.refillist.pid"
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/home/deployer/apps/refillist/current"
+  working_directory "/home/refillist/apps/refillist/current"
 
   # feel free to point this anywhere accessible on the filesystem
-  user 'deployer', 'staff'
-  shared_path = "/home/deployer/apps/refillist/shared"
+  user 'refillist', 'refillist'
+  shared_path = "/home/refillist/apps/refillist/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
