@@ -24,7 +24,7 @@
 <!--			  	<li class="header-item tagline">Never Run Out!</li>
 -->
           <% if user_signed_in? %>
-      			<li><a href="#" id="add-shelf"><i class="icon-plus"></i> Add Shelf</a></li>
+      			<li><a href="#shelf-modal" role="button" data-toggle="modal" id="add-shelf"><i class="icon-plus"></i> Add Shelf</a></li>
     	   </ul>
           <% end %>
         </div>
@@ -64,6 +64,21 @@
     <%= yield %>
   </div>
 </div>
+
+<!-- Modal -->
+<div id="shelf-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="shelf-ModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="shelf-modalLabel">Add a Shelf</h3>
+  </div>
+  <div class="modal-body">
+    <form>
+      <label>Shelf Name</label>
+      <input type="text" placeholder="Enter the name for your shelf here">
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</div>
 </body>
 <script>
 $(document).ready(function() {
@@ -71,27 +86,6 @@ $(document).ready(function() {
     $('.app-columns').append('<div class="shelf"><h2>New Shelf</h2></div>');
 });
 });
- $(document).ready(function() {
-
-      $('.edit_shelf').editable(function(value, settings) { 
-     console.log(this);
-     console.log(value);
-     console.log(settings);
-     return(value);
-  });
-
-     $('.edit_item_title').editable( "/item_title", {
-         indicator : 'Saving...',
-         tooltip   : 'Click to edit...'
-     });
-
-     $('.edit_item_description').editable('/item_description', { 
-         type      : 'textarea',
-         indicator : 'Saving...',
-         tooltip   : 'Click to edit...'
-     });
- });
 
 </script>
-<script type="text/javascript" src="/jquery.jeditable.min.js"></script>
 </html>
