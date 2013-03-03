@@ -92,9 +92,27 @@
       success: function(value) {
         console.log(value.id);
         console.log(value.name);
+        $('.app-columns').append('<div class="shelf" id="value.id"><h2>value.name</h2></div>');
       },
     });
     
   });
 </script>
+<!-- <script>
+$(document).ready(function() {
+  $('#add-shelf').click(function() {
+    $('.app-columns').append('<div class="shelf"><h2>New Shelf</h2></div>');
+});
+});
+$(document).ready(function() {
+  $('#add-item').click(function() {
+    $('.app-columns').prepend('<div <div class="item-box">
+        <div class="item-image pull-left"><img src="http://placehold.it/100x100"></div>
+        <div class="item-title">Item Title</div>
+        <div class="item-description clearfix">Item Description</div>
+        <div>This item has <span class="remaining">100</span>% remaining</div>
+      </div>');
+});
+});
+</script> -->
 </html>
