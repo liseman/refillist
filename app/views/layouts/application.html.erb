@@ -85,7 +85,7 @@
 <!-- add a shelf script -->
 <script>
 
-
+$(document).ready(function(){
   $('#modal-form-submit').on('click', function(e) {
     e.preventDefault();
     $.ajax({
@@ -97,33 +97,26 @@
         console.log(value.name);
         $('.app-columns').append('<div class="shelf pull-left" id="' + value.id + '"><div class="shelf-header">' + value.name + '</div><div class="shelf-body"><button class="btn add-item" style="margin-left: 10px">Add an Item</button></div></div>');
         $('.add-item').click(function(){
-          $(this).parent().prepend('test');
+          $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn" id="item-submit">Submit</button></form></div>');
+          $('#item-submit').click(function(e) {
+            e.preventDefault();
+            console.log($(this).parent().parent().parent().parent());
+            $.ajax({
+            url: "/item",
+            type: "post",
+            data: { name: $("#item-name").val(), description: $("#item-description").val() },
+              success: function(value) {
+                console.log(value.id);
+                console.log(value.name);
+                console.log(value.description);
+              },
+            });
+          });
         });
-      },
-    });
-    $('#shelf-modal').modal('hide');    
-  });
-
-  $(document).ready(function() {
-    $('.add-item').click(function(){
-      $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn" id="item-submit">Submit</button></form></div>');
-      $('#item-submit').click(function(e) {
-        e.preventDefault();
-        console.log($(this).parent().parent().parent().parent());
-        $.ajax({
-        url: "/item",
-        type: "post",
-        data: { name: $("#item-name").val(), description: $("#item-description").val() },
-        success: function(value) {
-          console.log(value.id);
-          console.log(value.name);
-          console.log(value.description);
-        },
       });
+    $('#shelf-modal').modal('hide');    
     });
-  });
-  });
-
+});
 </script>
 
 </html>
