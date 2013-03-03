@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shelf_id: 1
+  name: MyString
+  description: MyString
+  tag: MyString
+  amount: 1
+
+two:
+  shelf_id: 1
+  name: MyString
+  description: MyString
+  tag: MyString
+  amount: 1

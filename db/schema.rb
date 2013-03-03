@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130211133642) do
+ActiveRecord::Schema.define(:version => 20130303035521) do
+
+  create_table "items", :force => true do |t|
+    t.integer  "shelf_id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "tag"
+    t.integer  "amount"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "shelves", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
