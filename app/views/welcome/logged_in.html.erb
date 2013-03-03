@@ -10,7 +10,24 @@
 				<div>This item has <span class="remaining">35</span>% remaining</div>
 			</div>
 			<!-- end of an item -->
-			<button class="btn">add an item</button>
+			<button class="btn" style="margin-left: 10px">add an item</button>
 		</div>
 	</div>
+</div>
+<!-- Modal -->
+<div id="item-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="item-ModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="item-modalLabel">Add an Item</h3>
+  </div>
+  <div class="modal-body">
+    <form>
+      <input id="item-name" type="text" placeholder="Enter the name for your Item">
+      <textarea rows="3" id="item-description" placeholder="Describe your Item">
+    </form>
+      <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Create Item</a>
+  </div>
+  </div>
 </div>
