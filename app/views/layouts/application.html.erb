@@ -88,6 +88,7 @@
 $(document).ready(function(){
   $('#modal-form-submit').on('click', function(e) {
     e.preventDefault();
+    $("#hero-row").remove();
     $.ajax({
       url: "/shelf",
       type: "post",
