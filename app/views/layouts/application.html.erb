@@ -73,7 +73,15 @@ $(document).ready(function() {
 });
  $(document).ready(function() {
 
-     $('.edit_shelf').editable( "/shelf");
+      $('.edit_self').editable(function(value, settings) { 
+     console.log(this);
+     console.log(value);
+     console.log(settings);
+     return(value);
+  }, { 
+     type    : 'textarea',
+     submit  : 'OK',
+ });
 
      $('.edit_item_title').editable( "/item_title", {
          indicator : 'Saving...',
