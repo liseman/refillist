@@ -101,11 +101,10 @@ $(document).ready(function(){
           $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description"><br><button type="Create Item" class="btn" id="item-submit">Submit</button></form></div>');
           $('#item-submit').click(function(e) {
             e.preventDefault();
-            console.log($(this).parents(".shelf").attr("id"));
             $.ajax({
             url: "/item",
             type: "post",
-            data: { name: $("#item-name").val(), description: $("#item-description").val() },
+            data: { name: $("#item-name").val(), description: $("#item-description").val(), shelfid: $(this).parents(".shelf").attr("id") },
               success: function(value) {
                 console.log(value.id);
                 console.log(value.name);
