@@ -88,7 +88,7 @@
 $(document).ready(function(){
   $('#modal-form-submit').on('click', function(e) {
     e.preventDefault();
-    $("#hero-row").remove();
+
     $.ajax({
       url: "/shelf",
       type: "post",
@@ -117,6 +117,7 @@ $(document).ready(function(){
       },
    
     });
+    $("#hero-row").remove();
     $('#shelf-modal').modal('hide'); 
   });
 });
