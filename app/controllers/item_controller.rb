@@ -1,7 +1,9 @@
 class ItemController < ApplicationController
   def index
     sid = params[:sid]
-    render json: current_user.shelf(sid).items.all
+#    render json: current_user.shelf.item
+# security: restrict to current_user
+    render json: Shelf.find_by_id(sid).item
   end
 
   def create
@@ -9,6 +11,7 @@ class ItemController < ApplicationController
     item = Item.new( :name => params[:name],
                      :shelf_id => params[:shelfid],
                      :description => params[:description],
+                     :amount => 100,
                    )
     item.save!
     render json: item
