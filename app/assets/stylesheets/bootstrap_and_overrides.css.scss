@@ -1,3 +1,31 @@
 @import "bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 10px; }
 @import "bootstrap-responsive";
+
+/*everything to do with the shelf*/
+
+.shelf {
+-webkit-transition: box-shadow 0.25s ease-in-out;
+-webkit-transition-delay: 0;
+-moz-transition: box-shadow 0.25s ease-in-out 0;
+-o-transition: box-shadow 0.25s ease-in-out 0;
+transition: box-shadow 0.25s ease-in-out 0;
+-webkit-box-shadow: rgba(17,17,17,0.15) 0 0 5px 3px;
+-moz-box-shadow: rgba(17,17,17,0.15) 0 0 5px 3px;
+box-shadow: rgba(17,17,17,0.15) 0 0 5px 3px;
+word-break: break-word;
+word-wrap: break-word;
+-webkit-border-radius: 5px 5px 0 0;
+-moz-border-radius: 5px 5px 0 0;
+-ms-border-radius: 5px 5px 0 0;
+-o-border-radius: 5px 5px 0 0;
+border-radius: 5px 5px 0 0;
+position: relative;
+z-index: 1;
+display: inline-block;
+overflow: hidden;
+width: 310px;
+height: 100%;
+margin: 0 10px 0 0;
+background-color: #f9f9f9;
+}
