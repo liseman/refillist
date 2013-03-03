@@ -92,7 +92,7 @@
       success: function(value) {
         console.log(value.id);
         console.log(value.name);
-        $('.app-columns').append('<div class="shelf" id=' + value.id + '>' + value.name + '</div>');
+        $('.app-columns').append('<div class="shelf pull-left" id=' + value.id + '><h2>' + value.name + '</h2></div>');
       },
     });
     $('#shelf-modal').modal('hide');    
