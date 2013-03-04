@@ -44,7 +44,7 @@ class ItemController < ApplicationController
     else
       value = item.amount
     end
-    render json: { 'amount' => value }
+    render json: { 'amount' => value, 'unscalled' => item.amount }
   end
 
   def rfid
