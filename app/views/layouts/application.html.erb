@@ -116,7 +116,7 @@ $(document).ready(function(){
                 console.log(value.name);
                 console.log(value.description);
                 console.log(value.rfid);
-                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="http://placehold.it/100x100"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div class="item-rfid">' + value.rfid + '<div>This item has <span class="remaining">100</span>% remaining</div></div>');
+                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="http://placehold.it/100x100"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div class="item-rfid">' + value.rfid + '<div>This item has <span class="remaining" id="remaining-'+value.id+'">100</span>% remaining</div></div>');
                   $('.temp').remove();
                   $('.close-parent').click(function(){
                     $(this).parent().remove();
@@ -140,7 +140,12 @@ setInterval(function() {
       type: "get",
       success: function(value){
         console.log(value.amount);
+<<<<<<< HEAD
       },
+=======
+        $("#remaining-21").text(value.amount);
+      };
+>>>>>>> make loop awesome
     });
 
 }, 1000);
