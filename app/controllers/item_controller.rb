@@ -12,6 +12,7 @@ class ItemController < ApplicationController
                      :shelf_id => params[:shelfid],
                      :description => params[:description],
                      :amount => 100,
+                     :tag => params[:rfid],
                    )
     item.save!
     render json: item

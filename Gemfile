@@ -46,4 +46,6 @@ gem 'bootstrap-sass'
 
 gem "paperclip", "~> 3.0"
 
+gem 'json'
+
 
