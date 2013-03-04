@@ -138,9 +138,9 @@ setInterval(function() {
     $.ajax({
       url: "/item/amt/21",
       type: "get",
-      success: function(){
+      success: function(value){
         console.log(value.amount);
-      }
+      },
     });
 
 }, 1000);
