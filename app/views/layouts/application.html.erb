@@ -136,11 +136,46 @@ $(document).ready(function(){
 setInterval(function() {
 
     $.ajax({
-      url: "/item/amt/21",
+      url: "/item/amt/1",
       type: "get",
       success: function(value){
         console.log(value.amount);
-        $("#remaining-21").text(value.amount);
+        $("#remaining-1").text(value.amount);
+      },
+    });
+
+    $.ajax({
+      url: "/item/amt/2",
+      type: "get",
+      success: function(value){
+        console.log(value.amount);
+        $("#remaining-2").text(value.amount);
+      },
+    });
+        $.ajax({
+      url: "/item/amt/3",
+      type: "get",
+      success: function(value){
+        console.log(value.amount);
+        $("#remaining-3").text(value.amount);
+      },
+    });
+
+            $.ajax({
+      url: "/item/amt/4",
+      type: "get",
+      success: function(value){
+        console.log(value.amount);
+        $("#remaining-4").text(value.amount);
+      },
+    });
+
+    $.ajax({
+      url: "/item/amt/5",
+      type: "get",
+      success: function(value){
+        console.log(value.amount);
+        $("#remaining-5").text(value.amount);
       },
     });
 
