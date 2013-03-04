@@ -116,7 +116,7 @@ $(document).ready(function(){
                 console.log(value.name);
                 console.log(value.description);
                 console.log(value.rfid);
-                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="'+value.name+'.jpg"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div class="item-rfid">' + value.tag + '<div>This item has <span class="remaining" id="remaining-'+value.id+'">100</span>% remaining</div></div><hr />');
+                  $('.temp').parent().prepend('<div class="item-box" id="' + value.id + '"><button class="close-parent btn">x</button><div class="item-image pull-left"><img src="'+value.name+'.png"></div><div class="item-title">' + value.name + '</div><div class="item-description clearfix">' + value.description + '</div><div class="item-rfid">' + value.tag + '<div>This item has <span class="remaining" id="remaining-'+value.id+'">100</span>% remaining</div></div><hr />');
                   $('.temp').remove();
                   $('.close-parent').click(function(){
                     $(this).parent().remove();
