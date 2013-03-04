@@ -174,7 +174,7 @@ setInterval(function() {
       success: function(value){
         console.log(value.rfid);
         $(".item-box").removeClass("highlight");
-        $("#"value.rfid).addClass("highlight");
+        $("#"+value.rfid).addClass("highlight");
       },
     });
 
