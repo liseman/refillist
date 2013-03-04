@@ -31,4 +31,23 @@ class ItemController < ApplicationController
     item = Item.find_by_id(params[:iid])
     render json: { 'amount' => item.amount }
   end
+
+  def rfid
+    out = `curl -s https://agent.electricimp.com:443/WENqSu+U3q0X`
+    out = out.downcase
+    done = 0
+    if out == 'a1'
+      done = 1
+    end
+    if out == 'b4'
+      done = 2
+    end
+    if out == 'c3'
+      done = 3
+    end
+    if out == 'd4'
+      done = 4
+    end
+    render json: { 'rfid' => done }
+  end
 end

@@ -10,6 +10,7 @@ Refillist::Application.routes.draw do
   match 'push/rfid/:sid' => "shelf#push_rfid", :via => :post
 
   resources :item, :only => [:create]
+  match 'item/rfid' => "item#rfid", :via => :get
   match 'item/:sid' => "item#index", :via => :get
   match 'item/amt/:iid' => "item#amt", :via => :get
 
