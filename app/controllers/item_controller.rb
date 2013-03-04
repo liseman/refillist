@@ -8,12 +8,12 @@ class ItemController < ApplicationController
 
   def create
     # posthack: security -> current_user must own shelf
-    tag = params[:rfid].downcase
+#    tag = params[:rfid].downcase if params[:rfid]
     item = Item.new( :name => params[:name],
                      :shelf_id => params[:shelfid],
-                     :description => params[:description],
-                     :amount => 100,
-                     :tag => tag
+#                     :description => params[:description],
+                     :amount => 100
+#                     :tag => tag
                    )
     item.save!
     render json: item

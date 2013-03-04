@@ -6,7 +6,8 @@ Refillist::Application.routes.draw do
 
   resources :shelf, :only => [:index, :create]
   match 'shelf/:id' => "shelf#update", :via => :post
-  match 'push/:sid' => "shelf#push", :via => :post
+  match 'push/weight/:sid' => "shelf#push_weight", :via => :post
+  match 'push/rfid/:sid' => "shelf#push_rfid", :via => :post
 
   resources :item, :only => [:create]
   match 'item/:sid' => "item#index", :via => :get

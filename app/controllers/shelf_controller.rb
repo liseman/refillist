@@ -19,6 +19,41 @@ class ShelfController < ApplicationController
     render json: shelf
   end
 
+  def push_weight
+    shelf = User.find_by_id(7).shelf.find_by_id(params[:sid])
+    val = JSON.parse(param[:json]).downcase
+  end
+
+  def push_rfid
+    puts "sdfsfsdfsfdsfasfasfsafsafasdsa"
+    #shelf = User.find_by_id(7).shelf.find_by_id(params[:sid])
+    val = params[:json].downcase
+    #item = shelf.item.find_by_tag(val)
+#    item = Item.find_by_tag(val)
+    item = Item.find_by_id(5)
+    out = `curl -s https://agent.electricimp.com/5ip8Tl09cliT`
+    out = out.to_i
+    puts "out #{out}"
+#    percent = ( out / 855.0 ) * 100.0
+    moo = 855.0 - 700.0
+    foo = out - 700.0
+    puts foo
+    percent = ( moo / foo  ) * 100.0
+    puts percent
+#full whiskey 740
+    if percent > 100
+      percent = 100
+    end
+    if percent < 0
+      percent = 0
+    end
+    puts "percent #{percent}"
+    item.amount = out
+    item.save!
+
+    render json: { "amount" => "done" }
+  end
+
   def push
     shelf = User.find_by_id(7).shelf.find_by_id(params[:sid])
     puts "shelf: #{shelf}"
