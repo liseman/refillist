@@ -6,7 +6,7 @@ require 'net/http'
 require 'uri'
 require 'awesome_print'
 
-shelf_id = "100"
+shelf_id = "1"
 
 uri = URI("http://api.cosm.com:80/v2/feeds/116630.json?datastreams=0,1,2")
 http = Net::HTTP.new(uri.host, uri.port)
@@ -26,9 +26,9 @@ if (code >= 200 && code < 300) then
     #    print chunk unless chunk =~ />416.+Range/
     #end
     resp = http.get2(uri.path, headers)
-    #real_res = JSON.parse(resp.body)
+    real_res = JSON.parse(resp.body)
 
-    #ap resp.body.to_s
+    puts resp.body
 
     uri_out = URI.parse("http://localhost:3000/push/#{shelf_id}")
     resp_out = Net::HTTP.post_form( uri_out, "json" => resp.body.to_s )
