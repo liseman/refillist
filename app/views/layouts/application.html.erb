@@ -169,11 +169,12 @@ setInterval(function() {
     });
 
     $.ajax({
-      url: "/item/amt/5",
+      url: "/item/rfid",
       type: "get",
       success: function(value){
-        console.log(value.amount);
-        $("#remaining-5").text(value.amount);
+        console.log(value.rfid);
+        $(".item-box").removeClass("highlight");
+        $("#"value.rfid).addClass("highlight");
       },
     });
 

@@ -95,6 +95,7 @@ padding: 8px 10px;
 .item-title {
 	font-size: 18px;
 	font-weight: bold;
+	margin-bottom;
 }
 
 .item-description {
@@ -211,4 +212,9 @@ top: 5px;
 
 .carousel-indicators {
 	display: none;
+}
+
+.highlight {
+	border: 1px;
+	border-color: yellow;
 }
