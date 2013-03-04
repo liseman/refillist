@@ -3,7 +3,18 @@
 	<div id="mainLanding" class="row-fluid">
 		<div class="logged-out-logo-container offset5">
 			<div class="logged-out-logo">
-				<img id="slide-image" src="/back-drugs.png">
+				<div id="myCarousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"><img id="slide-image" src="/back-drugs.png"></li>
+						<li data-target="#myCarousel" data-slide-to="1"><img src="/back-glass.png"></li>
+						<li data-target="#myCarousel" data-slide-to="2"><img src="/back-tin.png"></li>
+					</ol>
+					<!-- Carousel items -->
+					<div class="carousel-inner">
+						<div class="active item">…</div>
+						<div class="item">…</div>
+						<div class="item">…</div>
+					</div>
 				<img class="offset4" id="ref-logo" src="/logo-refillist.png">
 			</div>
 		</div>
@@ -11,5 +22,5 @@
 </div>
 
 <script type="text/javascript">
-	$('#slide-image').slider({animate: "fast" });
+	$('.carousel').carousel('cycle');
 </script>
