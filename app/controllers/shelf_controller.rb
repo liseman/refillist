@@ -24,18 +24,22 @@ class ShelfController < ApplicationController
     puts "shelf: #{shelf}"
     json_val = JSON.parse(params[:json]) 
     json_val['datastreams'].each do |data|
+      item = nil
       if data['id'] == 'rfid'
         puts "id"
-        item = shelf.item.find_by_tag(data['id'])
-        if id
+        val = data['current_value'].downcase
+        item = shelf.item.find_by_tag(val)
+        if item
           puts "item #{item}"
         end
       end
 
-      if data['id'] == 'weight'
+      if data['id'] == 'weight' and item != nil
         puts "weight"
-        percent = ( data['current_value'] / data['max_value'] ) * 100
+        percent = ( data['current_value'].to_i / data['max_value'].to_i ) * 100
         puts "#{percent}% left"
+        item.amount = percent
+        item.save!
       end
 
       #puts data['id']
@@ -43,6 +47,6 @@ class ShelfController < ApplicationController
       #puts data['at']
       #puts data['max_value']
     end
-    render json: { "hi" => "done" }
+    render json: { "amount" => "done" }
   end
 end

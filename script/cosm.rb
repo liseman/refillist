@@ -6,7 +6,7 @@ require 'net/http'
 require 'uri'
 require 'awesome_print'
 
-shelf_id = "99"
+shelf_id = "100"
 
 uri = URI("http://api.cosm.com:80/v2/feeds/116630.json?datastreams=0,1,2")
 http = Net::HTTP.new(uri.host, uri.port)

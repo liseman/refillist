@@ -10,6 +10,7 @@ Refillist::Application.routes.draw do
 
   resources :item, :only => [:create]
   match 'item/:sid' => "item#index", :via => :get
+  match 'item/amt/:iid' => "item#amt", :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
