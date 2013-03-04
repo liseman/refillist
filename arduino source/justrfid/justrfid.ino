@@ -5,10 +5,6 @@
 #include <SoftwareSerial.h>
 SoftwareSerial softSerial(14,15); //rx, tx
 
-//timers
-#include <Time.h>
-#include <TimeAlarms.h>
-
 //rfid
 #include <Wire.h>
 #include <Adafruit_NFCShield_I2C.h>
@@ -18,22 +14,13 @@ Adafruit_NFCShield_I2C nfc(IRQ, RESET);
 
 uint32_t cardidentifier = 0;
 
-
 String card;
 //array to hold all variables we care about sending to server
 String toSend;
 
-int sensorValue = 0;
-
 void setup()
 {
 
-  
-  //send data to server every 1 second
-  //Alarm.timerRepeat(1, sendData);
-  
-  //Alarm.timerRepeat(1, sendVals);
-  
   //serial
   Serial.begin(9600);
   softSerial.begin(2400);
@@ -61,19 +48,8 @@ void setup()
 
 void loop()
 {
-  //checks state of scheduled events, as per http://answers.oreilly.com/topic/2704-how-to-create-an-arduino-alarm-that-calls-a-function/ 
-  //Alarm.delay(1);
-  delay(1000);
-  analogRead(A2);
-  delay(1000);
-  sensorValue = analogRead(A2);
-  delay(1000);
-  Serial.println(sensorValue);
-  delay(1000);
+  delay(100);
   rfidRead();
-  Serial.println("loopy");
-  sendVals();
-  //delay(1000);
 }
 
 void rfidRead()
@@ -102,7 +78,7 @@ void rfidRead()
     if (cardidentifier == 3574523259) card = "b2";
     if (cardidentifier == 3574526203) card = "c3";
     if (cardidentifier == 3574725643) card = "d4";
-    //sendVals();
+    sendVals();
   }
 }
 
@@ -110,11 +86,12 @@ void rfidRead()
 void sendVals()
 {
   Serial.println(cardidentifier);
+  delay(100);
   //softSerial.print(cardidentifier);
   toSend  = String("");
-  delay(1000);
-  Serial.println(sensorValue);
-  toSend = String("R" + card + "R" + "W" + sensorValue + "W");
+  //Serial.println(sensorValue);
+  String shelf = "one";
+  toSend = String("Shelf" + shelf + "Shelf" + "R" + card + "R");
   Serial.println(toSend);
   softSerial.print(toSend);
   
