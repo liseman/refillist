@@ -132,6 +132,18 @@ $(document).ready(function(){
     $('#shelf-modal').modal('hide'); 
   });
 });
+
+setInterval(function() {
+
+    $.ajax({
+      url: "/item/amt/21",
+      type: "get",
+      success: function(){
+        console.log(value.amount);
+      }
+    });
+
+}, 1000);
 </script>
 
 </html>
