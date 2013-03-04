@@ -30,7 +30,7 @@ class ItemController < ApplicationController
   def amt
     item = Item.find_by_id(params[:iid])
     value = 0
-    if params[:iid] == 4
+    if params[:iid] == '4'
       a = item.amount
       if a < 940
         value = 0
@@ -44,7 +44,7 @@ class ItemController < ApplicationController
     else
       value = item.amount
     end
-    render json: { 'amount' => value, 'unscalled' => item.amount }
+    render json: { 'amount' => value, 'unscaled' => item.amount }
   end
 
   def rfid
