@@ -101,7 +101,7 @@ $(document).ready(function(){
           $(this).parent().remove();
         });
         $('[id^=add-item-]').click(function(){
-          $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description" id="item-description"><input type="text" placeholder="Enter RFID code" id="rfid"><input type="text" placeholder="Paste in image url" id="image-url"><br><button type="Create Item" class="btn btn-primary" id="item-submit">Submit</button><button class="btn close-form">Close</button></form></div>');
+          $(this).parent().prepend('<div class="item-box temp"><div class="item-title">Create a New Item</div><form><input type="text" placeholder="Enter Item Name" id="item-name"><input type="text" placeholder="Enter Item Description" id="item-description"><input type="text" placeholder="Enter RFID code" id="rfid"><br><button type="Create Item" class="btn btn-primary" id="item-submit">Submit</button><button class="btn close-form">Close</button></form></div>');
           $('.close-form').click(function (){
             $('.temp').remove();
           })
